@@ -1,16 +1,12 @@
-
 \documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
 
 \usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
-\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+
 \usepackage[english]{babel} % English language/hyphenation
 \usepackage{amsmath,amsfonts,amsthm} % Math packages
 
-\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
 
-\usepackage{sectsty} % Allows customizing section commands
-\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
-
+\usepackage{graphicx}
 \usepackage{fancyhdr} % Custom headers and footers
 \pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
 \fancyhead{} % No page header - if you want one, create it in the same way as the footers below
@@ -28,20 +24,20 @@
 \setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
 
 %----------------------------------------------------------------------------------------
-%	TITLE SECTION
+%        TITLE SECTION
 %----------------------------------------------------------------------------------------
 
 \newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
 
-\title{	
-\normalfont \normalsize 
+\title{        
+\normalfont \normalsize
 \textsc{Universidad de Los Andes} \\ [25pt] % Your university, school and/or department name(s)
 \horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
-\huge Spherical Electromagnetic Waves  \\ % The assignment title
+\huge Spherical Electromagnetic Waves \\ % The assignment title
 \horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
 }
 
-\author{Leonardo Rios,  Nicolas Hayek,  Catalina} % Your name
+\author{Leonardo Rios, Nicolas Hayek, Catalina Ruano} % Your name
 
 \date{\normalsize{Nov 01, 2013}} % Today's date or a custom date
 
@@ -55,26 +51,30 @@
 
 \section*{SPHERICAL WAVES}
 
-The most easily treated solutions for the Maxwell's equations are those in one dimension or those written as plane wave equations, however mathematically one can treat an electromagnetic wave in any system of coordinates. In all the coordinate systems available, the spherical coordinates are very useful for representing some phenomena in physics. 
+The most easily treated solutions for the Maxwell's equations are those in one dimension or those written as plane wave equations, 
+however mathematically one can treat an electromagnetic wave in any system of coordinates. 
+In all the coordinate systems available, the spherical coordinates are very useful for representing some phenomena in physics.\\
+We would like to discuss now the theory of spherical waves. This kind of waves, are those which correspond to spherical surfaces that are 
+spreading out in three dimension from some center.
 
 \paragraph*{Wave Equation:}
 We consider the same wave equation we know but now, in spherical coordinates:
 
 \begin{equation}
-\nabla^2 E-\frac{1}{c^2}\frac{\partial^2 E}{\partial t^2} =0 
+\nabla^2 E-\frac{1}{c^2}\frac{\partial^2 E}{\partial t^2} =0
 \end{equation}
 For monochromatic waves, the operator $\frac{\partial^2 }{\partial t^2}$ becomes $-w^2$: \\
 \begin{equation}
 \nabla^2 E(r)+\frac{w^2}{c^2}E(r) =0 \label{eq2}
-\end{equation} 
+\end{equation}
 Using these vector identities:
 
 \begin{equation}
-\nabla^2 E=-\nabla \times \nabla \times E + \nabla\nabla \cdot E 
-\end{equation} 
+\nabla^2 E=-\nabla \times \nabla \times E + \nabla\nabla \cdot E
+\end{equation}
 \begin{equation}
 \nabla \times (F \times G)=F\nabla\cdot G -G \nabla \cdot F + (G\cdot\nabla)F - (F\cdot\nabla)G
-\end{equation} 
+\end{equation}
 \begin{equation}
 \nabla(F\cdot G)=(F \cdot \nabla)G + (G \cdot \nabla)F+ F\times \nabla \times G + G \times \nabla \times F
 \end{equation}
@@ -111,15 +111,118 @@ where the solution for $\psi$ is assumed to have he form:
 \psi=R(r)\Theta(\theta) \Phi(\phi)
 \end{equation}
 
-This, almost immediately, takes to the solutions for each function $R(r)$ , $\Theta(\theta)$ , $\Phi(\phi)$ where the Legendre Polynomials, $P_{\ell}^{m}\left(\cos\theta\right)$, are solutions for the radial independent part and the Spherical Bessel and Neumann Functions are solutions to the radial differential equation.
+This, almost immediately, takes to the solutions for each 
+function $R(r)$ , $\Theta(\theta)$ , $\Phi(\phi)$ where the Legendre Polynomials, $P_{\ell}^{m}\left(\cos\theta\right)$, are solutions 
+for the radial independent part and the Spherical Bessel and Neumann Functions are solutions to the radial differential equation.\\
 
+If we wish to consider spherical symmetric fields which can propagate as spherical waves, our field quantity must be a function of $r$ and $t$.
+Suppose we ask, then, what functions  $\psi (r,t)$ are solutions of the three-dimension wave equation 
+\begin{equation}
+ \nabla^2 \psi (r,t)-\frac{1}{c^2}\frac{\partial^2 }{\partial t^2}\psi (r,t) =0
+\end{equation}
+ Since $\psi (r,t)$ depends only on the spacial coordinates, we can use the next equation for the Laplacian:
+ $$ \nabla^2 \psi= \frac{1}{r}\frac{d^2}{dr^2}(r\psi)$$
+Since $\psi$ is also a function of $t$, we should write the derivatives with respect to $r$ as partial derivatives. Then the wave equation becomes
+$$\frac{1}{r}\frac{\partial^2 }{\partial r^2}(r,\psi)-\frac{1}{c^2}\frac{\partial^2 }{\partial t^2}\psi=0 $$
 
-\paragraph*{Parrafo:}
+We must now solve this equation, which is more complicated than the plane equation case. But if we multiply this equation by $r$ we get the following 
+expression
+\begin{equation}
+ \frac{\partial^2 }{\partial r^2}(r,\psi)-\frac{1}{c^2}\frac{\partial^2 }{\partial t^2}\psi=0
+\end{equation}
+This equation tell us that the function $r\psi$ satisfies the one-dimensional wave equation in the variable $r$, then, using the general principle
+which says that same equations always have the same solutions, we know that if $r\psi$ is function only of $(r-ct)$ then it will be a solution of
+the Equation (0.12). So we know that spherical waves must have the form
+$$ r\psi(r,t)= f(r-ct)$$
+Or we can say that $r\psi$ can have the form
+$$ r\psi= f(t-r/c)$$
+Then, dividing by $r$ we find that the field quantity has the following form
+\begin{equation}
+ \psi=\frac {f(t-r/c)}{r}
+\end{equation}
+Such a function represents a general spherical wave travelling outward from the origin at the speed $c$. The factor $r$ in the denominator says that
+the amplitude of the wave decreases in proportion to $1/r$ as the wave propagates. If we compare it with a plane wave, we can see that the amplitude
+remains constant as the wave runs along, but in a spherical wave the amplitude steadily decreases. \\
+We can explain this, because of the energy density. The energy density in a wave depends on the square of the wave amplitude. As the wave spreads,
+its energy is spread over larger and larger areas proportional to the radial distance squared. In the case of spherical waves, if the total 
+energy is conserved, the energy density must fall as $1/r²$, and the amplitude of the wave must decrease as $1/r$ as the Equation (0.13) says. This 
+is a second possible solution to the one-dimensional wave equation.\\
+In the next Figures, the decrease in the amplitude is shown
+\begin{figure}[h!] 
+\centering
+\includegraphics[scale=0.3]{graf1.JPG}
+\caption{A spherical wave $\psi= {f(t-r/c)}/{r}$. $\psi$ as a function of $r$ for $t=t_1$ and the same wave for the later time $t_2$}
+\label{graf1.JPG}
+\end{figure}
 
+\begin{figure}[h!] 
+\centering
+\includegraphics[scale=0.3]{graf2.JPG}
+\caption{A spherical wave $\psi= {f(t-r/c)}/{r}$.$\psi$ as a function of $t$ for $r=r_1$ and the same wave seen at $r_2$}
+\label{graf2.JPG}
+\end{figure}
 
+\paragraph*{Physical meaning:}
+We are now  going to make a special assumption. We have said that the waves generated by a source are only the waves which go outward. We know that
+waves are caused by the motion of charges, so the waves are proceed outward from the charges. It would be strange to imagine that before charges 
+were set in motion, a spherical wave started out from infinity and arrived at the charges just at the time they began to move.That is a possible solution,
+but expirence shows that when charges are accelerated the waves travel outward from the charges.\\
+Although Maxwell`s equations would allow either possibility, we will put in an additional fact that \underline{only the outgoing wave solution makes physical sense}.
+This assumption, has an interesting consequence: We are removing the symetry with respect to time that exist in Maxwell`s equations.\\
+The original equations and also the wave equations derived from them, have the property that if we change the sign of $t$, the equation is unchanged.
+These equations say that for every solution corresponding to a wave going in one direction there is an equally valid solution for a wave travelling
+in the opposite direction.Our assumption is that we will only consider the outgoing spherical waves (in some circumstances is not absurd avoid this assumption, but
+we are not going to study these ideas now).\\
+There is something else that is important to mention. In the solution for an outgoing wave, Equation (0.13), the function $\psi$ is finite at the origin.
+We would like to have a wave solution which is smooth everywhere. The solution must represent physically a situation which there is some source
+at the origin, so we can see that we have not solved the free equation (0.11) everywhere, we have solved it with zero on the right everywhere, except
+at the origin.That is because some of the steps in our derivation are not ``legal'' when $r=0$.\\
+Something similar happens when we want to solve the equation for an electrostatic potential in free space, $\nabla^2\phi=0$. We find that in the region
+where there are no electric charges, the solution for the electrostatic potential is constant everywhere. That corresponds to the first
+term in our solution. But we have also the second term, which says that there is a  contribution to the potential that varies as one over the distance
+from the origin. We know, however, that such a potential corresponds to a point of charge at the origin. So, although we were solving
+the potential in free space, our solution also gibs the field for a point source at the origin, and that is what happened in the spherical wave 
+solution. If there were really no charges or currents at the origin, there would not be spherical outgoing waves. The spherical waves must be 
+produced by sources at the origin.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\\However, in spherical polar coordinates, in the absence of charge and current, the Maxwell equations become $\nabla\cdot B = 0 $,$\nabla\cdot E = 0 $, the equations derived from $\nabla\times B - \epsilon_0 \frac{\partial E}{\partial t} =0$ , $\nabla\times E + \mu_0 \frac{\partial B}{\partial t} =0$  and $\nabla\cdot E =0$ are represented as:
 
+\begin{equation}
+\frac{1}{r sin \theta}[\frac{\partial}{\partial \theta} (sin \theta E_\phi) - \frac{\partial E_\theta}{\partial \phi})] + \mu_0 \frac{\partial B_r}{\partial t}=0
+\end{equation}
+\begin{equation}
+\frac{1}{r sin \theta}[\frac{\partial E_r}{\partial \phi} - \frac{1}{r}\frac{\partial (r E_\phi)}{\partial r})] + \mu_0 \frac{\partial B_\theta}{\partial t}=0
+\end{equation}
+
+\begin{equation}
+\frac{1}{r }[\frac{\partial (r E_\theta)}{\partial r} - \frac{1}{r}\frac{\partial (E_r)}{\partial \theta})] + \mu_0 \frac{\partial B_\phi}{\partial t}=0
+\end{equation}
+
+\begin{equation}
+\frac{1}{r^{2}} \frac{\partial}{\partial r} (r^{2}B_{r})+ \frac{1}{r sin \theta} \frac{\partial}{\partial \theta} (sin \theta B_{\theta})+ \frac{1}{r sin \theta} \frac{\partial B_{\phi}}{\partial \phi} =0
+\end{equation}
+
+\begin{equation}
+\frac{1}{r sin \theta}[\frac{\partial}{\partial \theta} sin \theta B_\phi - \frac{\partial B_{\theta}}{\partial \phi}]-\epsilon_{0} \frac{\partial E_{\theta}} {\partial t}
+\end{equation}
+
+\begin{equation}
+\frac{1}{r sin \theta} \frac{\partial B_r}{\partial \phi} - \frac{1}{r}\frac{\partial (r B_\phi)}{\partial r}-\epsilon_{0} \frac{\partial E_{r}} {\partial t} =0
+\end{equation}
+
+\begin{equation}
+\frac{1}{r} \frac{\partial }{\partial r}(r B_\theta) - \frac{1}{r}\frac{\partial (B_r)}{\partial \theta}-\epsilon_{0} \frac{\partial E_{\phi}} {\partial t} =0
+\end{equation}
+
+\begin{equation}
+\frac{1}{r^{2}} \frac{\partial}{\partial r} (r^{2}E_{r})+ \frac{1}{r sin \theta} \frac{\partial}{\partial \theta} (sin \theta E_{\theta})+ \frac{1}{r sin \theta} \frac{\partial B_{\phi}}{\partial \phi} =0
+\end{equation}
+\\ then the solution to the spherical equations must fulfill these conditions.
+\\The theory of electromagnetic waves of various ranges in systems which are of practical interest in radio engineering and electronics including transmission lines, resonators and radiating systems 
 \begin{thebibliography}{2}
 \bibitem{lib} Reitz, Milford, Christy: Foundations of electromagnetic theory. Addison-Wesley, 1993
+\bibitem{lib} Feynman, Leighton,Sands: The Feynman Lectures on physics Volume II. Pearson Addison-Wesley, 2006
 
 \end{thebibliography}
 \end{document}
+
